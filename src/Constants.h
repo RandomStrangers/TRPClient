@@ -76,8 +76,8 @@ so link directly to avoid a pointless redirect */
 #define RESOURCE_SERVER "http://static.classicube.net"
 /* Webpage where users can register for a new account */
 #define REGISTERNEW_URL "https://www.classicube.net/acc/register/"
-// ClassiCube client download page
-#define CC_CLIENT_URL "https://www.classicube.net/download/"
+// Client download page
+#define CLIENT_URL "https://github.com/RandomStrangers/TRPClient"
 
 #define DEFAULT_USERNAME "Singleplayer"
 #endif

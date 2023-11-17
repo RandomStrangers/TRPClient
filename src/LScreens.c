@@ -673,11 +673,11 @@ LAYOUTS main_btnDirect[]  = { { ANCHOR_CENTRE,  0 }, { ANCHOR_CENTRE,  60 } };
 LAYOUTS main_btnSPlayer[] = { { ANCHOR_CENTRE,  0 }, { ANCHOR_CENTRE, 110 } };
 
 LAYOUTS main_btnRegister[] = { { ANCHOR_MIN,    6 }, { ANCHOR_MAX,  6 } };
-LAYOUTS main_btnClientUpdate[] = { { ANCHOR_MIN,  6 }, { ANCHOR_MAX,  40 } };
+LAYOUTS main_btnCCUpdate[] = { { ANCHOR_MIN,  6 }, { ANCHOR_MAX,  40 } };
 
 
 LAYOUTS main_btnOptions[]  = { { ANCHOR_CENTRE, 0 }, { ANCHOR_MAX,  6 } };
-LAYOUTS main_btnCCUpdate[]  = { { ANCHOR_MAX,    6 }, { ANCHOR_MAX,  6 } };
+LAYOUTS main_btnClientUpdate[] = { { ANCHOR_MAX,    6 }, { ANCHOR_MAX,  6 } };
 
 LAYOUTS main_lblUpdate_N[] = { { ANCHOR_MAX,   10 }, { ANCHOR_MAX, 45 } };
 LAYOUTS main_lblUpdate_H[] = { { ANCHOR_MAX,   10 }, { ANCHOR_MAX, 6 } };
@@ -748,9 +748,9 @@ static void MainScreen_Register(void* w) {
 	if (res) Logger_SimpleWarn(res, "opening register webpage in browser");
 }
 static void MainScreen_Client_Update(void* w) {
-	static const cc_string CCUrl = String_FromConst(CC_CLIENT_URL);
+	static const cc_string CCUrl = String_FromConst(CLIENT_URL);
 	cc_result res = Process_StartOpen(&CCUrl);
-	if (res) Logger_SimpleWarn(res, "opening CC download page in browser");
+	if (res) Logger_SimpleWarn(res, "opening Client download page in browser");
 }
 static void MainScreen_Resume(void* w) {
 	struct ResumeInfo info;
