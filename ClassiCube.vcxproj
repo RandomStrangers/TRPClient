@@ -560,6 +560,13 @@
   <ItemGroup>
     <ResourceCompile Include="..\misc\windows\Icon.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Uploads\Win32\ClassiCube.exe">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </None>
+    <None Include="Uploads\Win64\ClassiCube.exe" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

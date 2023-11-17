@@ -827,7 +827,7 @@ static void MainScreen_Init(struct LScreen* s_) {
 
 	LButton_Init(s, &s->btnOptions, 100, 35, "Options", main_btnOptions);
 	if (Updater_Supported) {
-		LButton_Init(s, &s->btnCCUpdate,  100, 35, "CC Client", main_btnCCUpdate);
+		LButton_Init(s, &s->btnCCUpdate,  111, 35, "CC Client", main_btnCCUpdate);
 	}
 	
 	s->btnLogin.OnClick    = MainScreen_Login;
