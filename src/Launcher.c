@@ -324,6 +324,14 @@ const struct LauncherTheme Launcher_NordicTheme = {
 	BitmapColor_RGB( 76,  86, 106), /* button highlight */
 };
 
+const struct LauncherTheme Launcher_CoreTheme = {
+	false,
+	BitmapColor_RGB(64, 0, 10), /* background */
+	BitmapColor_RGB(255, 180, 32), /* button border */
+	BitmapColor_RGB(155, 108, 0), /* active button */
+	BitmapColor_RGB(64, 0, 64), /* button */
+	BitmapColor_RGB(64, 0, 0), /* button highlight*/
+};
 CC_NOINLINE static void ParseColor(const char* key, BitmapCol* color) {
 	cc_uint8 rgb[3];
 	cc_string value;
@@ -520,7 +528,7 @@ cc_bool Launcher_BitmappedText(void) {
 	return (useBitmappedFont || Launcher_Theme.ClassicBackground) && hasBitmappedFont;
 }
 void Launcher_DrawTitle(struct FontDesc* font, const char* text, struct Context2D* ctx) {
-	cc_string title = String_FromReadonly("&4T.&6R.&5P. &c1.&e0.&d1 &aBeta");
+	cc_string title = String_FromReadonly("&4H&6a&5r&0m&7o&2n&dy &a(Beta)");
 	struct DrawTextArgs args;
 	int x;
 

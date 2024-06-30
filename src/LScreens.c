@@ -1468,18 +1468,20 @@ void SettingsScreen_SetActive(void) {
 *#########################################################################################################################*/
 static struct ThemesScreen {
 	LScreen_Layout
-	struct LButton btnModern, btnClassic, btnNordic;
+	struct LButton btnModern, btnClassic, btnNordic, btnCore;
 	struct LButton btnCustom, btnBack;
 } ThemesScreen;
 
-#define THEME_SCREEN_MAX_WIDGETS 5
+#define THEME_SCREEN_MAX_WIDGETS 30
 static struct LWidget* themes_widgets[THEME_SCREEN_MAX_WIDGETS];
 
-LAYOUTS the_btnModern[]  = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE, -120 } };
+LAYOUTS the_btnModern[] = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE, -120 } };
 LAYOUTS the_btnClassic[] = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  -70 } };
-LAYOUTS the_btnNordic[]  = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  -20 } };
-LAYOUTS the_btnCustom[]  = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  120 } };
-LAYOUTS the_btnBack[]    = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  170 } };
+LAYOUTS the_btnNordic[] = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  -20 } };
+LAYOUTS the_btnCore[] = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  30 } };
+LAYOUTS the_btnCustom[] = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  80 } };
+LAYOUTS the_btnBack[] = { { ANCHOR_CENTRE, 0 }, { ANCHOR_CENTRE,  170 } };
+
 
 
 static void ThemesScreen_Set(const struct LauncherTheme* theme) {
@@ -1497,6 +1499,9 @@ static void ThemesScreen_Classic(void* w) {
 static void ThemesScreen_Nordic(void* w) {
 	ThemesScreen_Set(&Launcher_NordicTheme);
 }
+static void ThemesScreen_Core(void* w) {
+	ThemesScreen_Set(&Launcher_CoreTheme);
+}
 
 static void ThemesScreen_Show(struct LScreen* s_) {
 	struct ThemesScreen* s = (struct ThemesScreen*)s_;
@@ -1506,12 +1511,14 @@ static void ThemesScreen_Show(struct LScreen* s_) {
 	LButton_Init(s, &s->btnModern,  200, 35, "Modern",  the_btnModern);
 	LButton_Init(s, &s->btnClassic, 200, 35, "Classic", the_btnClassic);
 	LButton_Init(s, &s->btnNordic,  200, 35, "Nordic",  the_btnNordic);
+	LButton_Init(s, &s->btnCore, 200, 35, "Core", the_btnCore);
 	LButton_Init(s, &s->btnCustom,  200, 35, "Custom",  the_btnCustom);
 	LButton_Init(s, &s->btnBack,     80, 35, "Back",    the_btnBack);
 
 	s->btnModern.OnClick  = ThemesScreen_Modern;
 	s->btnClassic.OnClick = ThemesScreen_Classic;
 	s->btnNordic.OnClick  = ThemesScreen_Nordic;
+	s->btnCore.OnClick = ThemesScreen_Core;
 	s->btnCustom.OnClick  = SwitchToColours;
 	s->btnBack.OnClick    = SwitchToSettings;
 }
@@ -1594,7 +1601,7 @@ static void UpdatesScreen_Format(struct LLabel* lbl, const char* prefix, cc_uint
 	String_AppendConst(&str, prefix);
 
 	if (!timestamp) {
-		String_AppendConst(&str, "&cCheck failed");
+		String_AppendConst(&str, "&cCC Check failed");
 	} else {
 		now   = DateTime_CurrentUTC_MS() - UNIX_EPOCH;
 		/* must divide as cc_uint64, int delta overflows after 26 days */

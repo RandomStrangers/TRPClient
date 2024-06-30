@@ -45,6 +45,8 @@ extern const struct LauncherTheme Launcher_ModernTheme;
 extern const struct LauncherTheme Launcher_ClassicTheme;
 /* Custom Nordic style theme */
 extern const struct LauncherTheme Launcher_NordicTheme;
+extern const struct LauncherTheme Launcher_CoreTheme;
+
 
 /* Loads theme from options. */
 void Launcher_LoadTheme(void);

@@ -7,7 +7,7 @@ Copyright 2014-2023 ClassiCube | Licensed under BSD-3
 
 #define GAME_MAX_CMDARGS 5
 #define CC_APP_VER "1.3.6"
-#define APP_VER "1.0.1"
+#define APP_VER "1.0.2"
 #define GAME_API_VER 1
 
 #if defined CC_BUILD_OG
@@ -15,8 +15,11 @@ Copyright 2014-2023 ClassiCube | Licensed under BSD-3
 #define GAME_APP_TITLE "ClassiCube 1.3.6"
 #else
 #define CC_APP_NAME  "ClassiCube 1.3.6"
-#define GAME_APP_NAME  "&4T.&6R.&5P. &c1.&e0.&d1 &aBeta"
-#define GAME_APP_TITLE "T.R.P 1.0.1 Beta"
+#define OG_GAME_APP_NAME  "&4T.&6R.&5P. &c1.&e0.&d2 &aBeta"
+#define OG_GAME_APP_TITLE "T.R.P 1.0.2 Beta"
+#define LONG_GAME_APP_NAME "&4H&6a&5r&0m&7o&2n&dy &c1.&e0.&d2 &aBeta"
+#define GAME_APP_NAME  "&6Harmony &d1.0.2 &aBeta"
+#define GAME_APP_TITLE "Harmony 1.0.2 Beta"
 #endif
 
 /* Max number of characters strings can have. */
