@@ -3,10 +3,7 @@ name: Build latest (Linux)
 on:
   push:
     branches:
-      - main
       - master
-      - ModernLighting
-      - AngledLighting
   workflow_dispatch:
 
 concurrency:
