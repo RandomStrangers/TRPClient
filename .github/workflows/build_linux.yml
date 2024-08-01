@@ -3,7 +3,10 @@ name: Build latest (Linux)
 on:
   push:
     branches:
+      - main
       - master
+      - ModernLighting
+      - AngledLighting
   workflow_dispatch:
 
 concurrency:
@@ -41,24 +44,27 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 32 bit TRPClient Linux build!'
+          NOTIFY_MESSAGE: 'Failed to compile 32 bit TRPClient Linux build'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
       
       
-      - uses: ./.github/actions/notify_success
+      - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-nix32-gl1'
           DEST_NAME: 'TRPClient-Linux32-OpenGL'
-          NOTIFY_MESSAGE: 'Successfully compiled 32 bit TRPClient OpenGL Linux build.'
-          WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
-      - uses: ./.github/actions/notify_success
+      - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-nix32-gl2'
           DEST_NAME: 'TRPClient-Linux32-ModernGL'
-          NOTIFY_MESSAGE: 'Successfully compiled 32 bit TRPClient ModernGL Linux build.'
+          
+          
+      - uses: ./.github/actions/notify_success
+        if: ${{ always() && steps.compile.outcome == 'success' }}
+        with:
+          NOTIFY_MESSAGE: 'Successfully compiled 32 bit TRPClient Linux builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
 
 #============================================
@@ -87,30 +93,31 @@ jobs:
       - uses: ./.github/actions/notify_failure
         if: ${{ always() && steps.compile.outcome == 'failure' }}
         with:
-          NOTIFY_MESSAGE: 'Failed to compile 64 bit TRPClient Linux build!'
+          NOTIFY_MESSAGE: 'Failed to compile 64 bit TRPClient Linux build'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
           
-      - uses: ./.github/actions/notify_success
+      - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-nix64-gl1'
           DEST_NAME: 'TRPClient-Linux64-OpenGL'
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit TRPClient OpenGL Linux build.'
-          WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
-      - uses: ./.github/actions/notify_success
+      - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-nix64-gl2'
           DEST_NAME: 'TRPClient-Linux64-ModernGL'
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit TRPClient ModernGL Linux build.'
-          WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
           
-      - uses: ./.github/actions/notify_success
+      - uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
           SOURCE_FILE: 'src/cc-sdl64-gl2'
           DEST_NAME: 'TRPClient-Linux64-SDL2'
-          NOTIFY_MESSAGE: 'Successfully compiled 64 bit TRPClient SDL2 Linux build.'
+          
+          
+      - uses: ./.github/actions/notify_success
+        if: ${{ always() && steps.compile.outcome == 'success' }}
+        with:
+          NOTIFY_MESSAGE: 'Successfully compiled 64 bit TRPClient Linux builds.'
           WEBHOOK_URL: '${{ secrets.WEBHOOK_URL }}'
