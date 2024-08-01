@@ -1,4 +1,4 @@
-package com.classicube;
+package com.trpclient;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -96,7 +96,7 @@ public class CCFileProvider extends ContentProvider
         // See AndroidManifest.xml for authority
         return new Uri.Builder()
                 .scheme("content")
-                .authority("com.classicube.android.client.provider")
+                .authority("com.trpclient.android.client.provider")
                 .encodedPath(Uri.encode(path, "/"))
                 .build();
     }
