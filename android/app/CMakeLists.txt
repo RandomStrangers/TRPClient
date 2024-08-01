@@ -101,7 +101,7 @@ add_library(classicube SHARED
         )
 
 # add lib dependencies
-target_link_libraries(classicube
+target_link_libraries(trpclient
     android
     EGL
     GLESv2
