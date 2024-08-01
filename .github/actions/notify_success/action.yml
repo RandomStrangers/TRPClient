@@ -19,22 +19,10 @@ inputs:
     description: 'Discord webhook URL'
     required: true
     type: string
-  SOURCE_FILE:
-    description: 'Path to file to upload'
-    required: true
-    type: string
-  DEST_NAME:
-    description: 'Name to use for the uploaded artifact'
-    required: true
-    type: string
 
 runs:
   using: "composite"
   steps:
-    - uses: actions/upload-artifact@v3
-      with:
-        name: ${{ inputs.DEST_NAME }}
-        path: ${{ inputs.SOURCE_FILE }}
     - name: Notify Success
       shell: sh
       run: |
