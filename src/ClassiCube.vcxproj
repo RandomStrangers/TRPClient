@@ -75,8 +75,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)x86\Release\</OutDir>
-    <IntDir>x86\Release\obj\</IntDir>
+    <OutDir>$(SolutionDir)x86\Debug\</OutDir>
+    <IntDir>x86\Debug\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -85,8 +85,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)x64\Release\</OutDir>
-    <IntDir>x64\Release\obj\</IntDir>
+    <OutDir>$(SolutionDir)x64\Debug\</OutDir>
+    <IntDir>x64\Debug\obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup>
     <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
