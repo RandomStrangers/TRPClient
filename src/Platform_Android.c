@@ -20,7 +20,7 @@ void Platform_Log(const char* msg, int len) {
 
 	Mem_Copy(tmp, msg, len); tmp[len] = '\0';
 	/* log using logchat */
-	__android_log_write(ANDROID_LOG_DEBUG, "ClassiCube", tmp);
+	__android_log_write(ANDROID_LOG_DEBUG, "TRPClient", tmp);
 }
 
 

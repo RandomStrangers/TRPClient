@@ -7,7 +7,7 @@ Copyright 2014-2023 ClassiCube | Licensed under BSD-3
 
 #define GAME_MAX_CMDARGS 5
 #define CC_APP_VER "1.3.6"
-#define APP_VER "1.0.3"
+#define APP_VER "1.0.4"
 #define GAME_API_VER 1
 
 #if defined CC_BUILD_OG
@@ -15,11 +15,11 @@ Copyright 2014-2023 ClassiCube | Licensed under BSD-3
 #define GAME_APP_TITLE "ClassiCube 1.3.6"
 #else
 #define CC_APP_NAME  "ClassiCube 1.3.6"
-#define OG_GAME_APP_NAME  "&4T.&6R.&5P. &c1.&e0.&d3 &aBeta"
-#define OG_GAME_APP_TITLE "T.R.P 1.0.3 Beta"
-#define LONG_GAME_APP_NAME "&4H&6a&5r&0m&7o&2n&dy &c1.&e0.&d3 &aBeta"
-#define GAME_APP_NAME  "&6Harmony &d1.0.3 &aBeta"
-#define GAME_APP_TITLE "Harmony 1.0.3 Beta"
+#define OG_GAME_APP_NAME  "&4T.&6R.&5P. &c1.&e0.&d4 &aBeta"
+#define OG_GAME_APP_TITLE "T.R.P 1.0.4 Beta"
+#define LONG_GAME_APP_NAME "&4H&6a&5r&0m&7o&2n&dy &c1.&e0.&d4 &aBeta"
+#define GAME_APP_NAME  "&6Harmony &d1.0.4 &aBeta"
+#define GAME_APP_TITLE "Harmony 1.0.4 Beta"
 #endif
 
 /* Max number of characters strings can have. */
@@ -71,8 +71,6 @@ enum SKIN_TYPE { SKIN_64x32, SKIN_64x64, SKIN_64x64_SLIM, SKIN_INVALID = 0xF0 };
 #define Int32_MinValue  ((cc_int32)-2147483647L - (cc_int32)1L)
 #define Int32_MaxValue  ((cc_int32)2147483647L)
 
-/* Skins were moved to use ClassiCube's content delivery network, 
-so link directly to avoid a pointless redirect */
 #define SKINS_SERVER    "http://cdn.classicube.net/skin"
 #define UPDATES_SERVER  "http://cdn.classicube.net/client"
 #define SERVICES_SERVER "https://www.classicube.net/api"
