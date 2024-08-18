@@ -37,11 +37,7 @@ const cc_result ReturnCode_FileNotFound     = ERROR_FILE_NOT_FOUND;
 const cc_result ReturnCode_SocketInProgess  = WSAEINPROGRESS;
 const cc_result ReturnCode_SocketWouldBlock = WSAEWOULDBLOCK;
 const cc_result ReturnCode_DirectoryExists  = ERROR_ALREADY_EXISTS;
-#if defined CC_BUILD_LINUX
 const char* Platform_AppNameSuffix = "";
-#else
-const char* Platform_AppNameSuffix = "";
-#endif
 cc_bool Platform_SingleProcess;
 
 /*########################################################################################################################*

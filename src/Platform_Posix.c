@@ -37,9 +37,11 @@ const cc_result ReturnCode_SocketWouldBlock = EWOULDBLOCK;
 const cc_result ReturnCode_DirectoryExists  = EEXIST;
 
 #if defined CC_BUILD_ANDROID
-const char* Platform_AppNameSuffix = " android";
+const char* Platform_AppNameSuffix = " (android)";
 #elif defined CC_BUILD_IOS
-const char* Platform_AppNameSuffix = " iOS";
+const char* Platform_AppNameSuffix = " (iOS)";
+#elif defined CC_BUILD_LINUX
+const char* Platform_AppNameSuffix = " (Linux)";
 #else
 const char* Platform_AppNameSuffix = "";
 #endif
